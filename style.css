@@ -1,0 +1,45 @@
+:root{
+  --bg:#0b0b0f;
+  --card:#12121a;
+  --gold:#d4af37;
+  --text:#f2f2f2;
+  --muted:#b6b6b6;
+  --line:#242436;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto; background:var(--bg); color:var(--text);}
+.wrap{max-width:980px;margin:0 auto;padding:18px;}
+.hero{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+h1{margin:0;font-size:24px;color:var(--gold)}
+.sub{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0;}
+h2{margin:0 0 10px;font-size:16px;color:var(--gold)}
+.row{display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed #1f1f2a}
+.row:last-child{border-bottom:none}
+.label{width:170px;color:var(--muted);font-size:13px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.hint{margin-top:10px;color:var(--muted);font-size:12px}
+.muted{color:var(--muted)}
+.footer{margin-top:10px;color:var(--muted);font-size:12px}
+
+.btn{border:1px solid var(--line);background:#0f0f16;color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer}
+.btn:hover{border-color:#3a3a58}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.primary{background:linear-gradient(180deg,#1b1b26,#10101a);border-color:#3a2f00;color:var(--gold)}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--gold);background:#0f0f16}
+
+.pkgGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.pkg{padding:12px;text-align:left}
+.pkgTitle{font-weight:700;color:var(--gold)}
+.pkgSub{font-size:12px;color:var(--muted);margin-top:4px}
+
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:10px;background:#0f0f16}
+.kpiTitle{font-size:12px;color:var(--muted)}
+.kpiVal{margin-top:6px;font-size:16px;color:var(--gold);font-family:ui-monospace,monospace}
+
+.actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.status{padding:10px;border-radius:12px;background:#0f0f16;border:1px solid var(--line);color:var(--text)}
+.side{display:flex;gap:10px;align-items:center}
