@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>365df MLM DApp</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script defer src="./config.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <h1>365df MLM DApp</h1>
+        <p class="sub">BSC Mainnet • Buy/Upgrade • Dashboard • Claim</p>
+      </div>
+      <button id="btnConnect" class="btn primary">Connect Wallet</button>
+    </header>
+
+    <section class="card">
+      <h2>Wallet</h2>
+      <div class="row"><div class="label">Address</div><div id="wallet" class="mono">-</div></div>
+      <div class="row"><div class="label">Network</div><div id="network" class="mono">-</div></div>
+      <div class="row"><div class="label">Sponsor (Auto)</div><div id="sponsor" class="mono">-</div></div>
+
+      <div class="row">
+        <div class="label">Side</div>
+        <div class="side">
+          <button id="btnSideL" class="btn">Left</button>
+          <button id="btnSideR" class="btn">Right</button>
+          <span id="sideText" class="pill">-</span>
+        </div>
+      </div>
+
+      <div class="hint">
+        Referral URL:
+        <span class="mono">...?ref=0xSponsor&side=L</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Buy / Upgrade</h2>
+      <div class="pkgGrid">
+        <button class="pkg btn" data-pkg="S"><div class="pkgTitle">Small</div><div class="pkgSub">100 USDT</div></button>
+        <button class="pkg btn" data-pkg="M"><div class="pkgTitle">Medium</div><div class="pkgSub">1,000 USDT</div></button>
+        <button class="pkg btn" data-pkg="L"><div class="pkgTitle">Large</div><div class="pkgSub">10,000 USDT</div></button>
+      </div>
+      <div class="row"><div class="label">Selected</div><div id="selectedPkg" class="pill">-</div></div>
+      <button id="btnBuy" class="btn primary" disabled>Approve & Buy</button>
+    </section>
+
+    <section class="card">
+      <h2>Dashboard</h2>
+      <div class="grid2">
+        <div class="kpi"><div class="kpiTitle">Package</div><div id="kpiPkg" class="kpiVal">-</div></div>
+        <div class="kpi"><div class="kpiTitle">Rank</div><div id="kpiRank" class="kpiVal">-</div></div>
+
+        <div class="kpi"><div class="kpiTitle">Claimable USDT</div><div id="kpiClaimUSDT" class="kpiVal">-</div></div>
+        <div class="kpi"><div class="kpiTitle">Claimable 365df</div><div id="kpiClaimDF" class="kpiVal">-</div></div>
+
+        <div class="kpi"><div class="kpiTitle">Volume Left</div><div id="kpiVolL" class="kpiVal">-</div></div>
+        <div class="kpi"><div class="kpiTitle">Volume Right</div><div id="kpiVolR" class="kpiVal">-</div></div>
+
+        <div class="kpi"><div class="kpiTitle">Stake Principal</div><div id="kpiPrincipal" class="kpiVal">-</div></div>
+        <div class="kpi"><div class="kpiTitle">Pending Reward</div><div id="kpiPending" class="kpiVal">-</div></div>
+
+        <div class="kpi"><div class="kpiTitle">Stake Countdown</div><div id="kpiCountdown" class="kpiVal">-</div></div>
+        <div class="kpi"><div class="kpiTitle">Stake End</div><div id="kpiStakeEnd" class="kpiVal">-</div></div>
+      </div>
+
+      <div class="actions">
+        <button id="btnClaimBonus" class="btn" disabled>Claim Bonus</button>
+        <button id="btnClaimStake" class="btn" disabled>Claim Stake</button>
+        <button id="btnRefresh" class="btn" disabled>Refresh</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Status</h2>
+      <div id="status" class="status">Ready</div>
+    </section>
+
+    <footer class="footer">
+      <div class="muted mono" id="contractsLine">-</div>
+    </footer>
+  </div>
+</body>
+</html>
